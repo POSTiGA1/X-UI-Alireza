@@ -19,8 +19,6 @@ on:
       - '**.toml'
       - '**.json'
       - '**.woff2'
-      - 'config/version'
-      - 'config/name'
       - 'go.mod'
       - 'go.sum'
       - 'x-ui.service'
