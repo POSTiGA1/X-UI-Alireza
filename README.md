@@ -40,6 +40,25 @@
 bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh)
 ```
 
+### Non-interactive Install
+
+On a fresh install, you can skip the questions and set the login info with environment variables. Any variable you leave out gets a random value.
+
+| Variable | Description |
+| --- | --- |
+| `XUI_NONINTERACTIVE` | Set to `1` to never ask questions during the install |
+| `XUI_USERNAME` | Panel username |
+| `XUI_PASSWORD` | Panel password |
+| `XUI_PANEL_PORT` | Panel port |
+| `XUI_WEB_BASE_PATH` | Panel web base path |
+
+```sh
+XUI_NONINTERACTIVE=1 XUI_USERNAME=me XUI_PASSWORD=secret XUI_PANEL_PORT=2053 XUI_WEB_BASE_PATH=abc123 \
+bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh)
+```
+
+These values are used only when the panel still has the default `admin` login. An existing setup is not changed.
+
 ## Install Legacy Version
 
 **Step 1:** To install an old version, use following installation command. e.g., version `1.8.0`:
@@ -469,6 +488,12 @@ Save your changes and restart the Xray Service
 - [Loyalsoldier](https://github.com/Loyalsoldier/v2ray-rules-dat) (License: **GPL-3.0**): _The enhanced version of V2Ray routing rule._
 - [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (License: **GPL-3.0**): _Enhanced v2ray/xray and v2ray/xray-clients routing rules with built-in Iranian domains and a focus on security and adblocking._
 
-## Stargazers over Time
+## Star History
 
-[![Stargazers over time](https://starchart.cc/alireza0/x-ui.svg)](https://starchart.cc/alireza0/x-ui)
+<a href="https://www.star-history.com/?repos=alireza0%2Fx-ui&type=date&releases=&legend=bottom-right">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=alireza0/x-ui&type=date&theme=dark&legend=bottom-right" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=alireza0/x-ui&type=date&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=alireza0/x-ui&type=date&legend=bottom-right" />
+ </picture>
+</a>

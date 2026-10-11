@@ -133,6 +133,14 @@
                     </a-tooltip>
                 </td>
             </tr>
+            <tr v-if="infoModal.clientSettings.pass">
+                <td>{{ i18n "password" }}</td>
+                <td>
+                    <a-tooltip :title="[[ infoModal.clientSettings.pass ]]">
+                        <a-tag class="info-large-tag">[[ infoModal.clientSettings.pass ]]</a-tag>
+                    </a-tooltip>
+                </td>
+            </tr>
             <template v-if="dbInbound.isWireguard">
                 <tr>
                     <td>{{ i18n "pages.xray.wireguard.publicKey" }}</td>
@@ -198,7 +206,8 @@
         </table>
         <template v-if="app.subSettings.enable && infoModal.clientSettings.subId && !dbInbound.isWireguard">
             <a-divider>Subscription URL</a-divider>
-            <a-row>
+            <!-- MASQUE has no share link format, so only the JSON subscription carries it -->
+            <a-row v-if="!dbInbound.isMasque">
                 <a-col :sx="24" :md="22">SUB: <a :href="[[ infoModal.subLink ]]" target="_blank">[[ infoModal.subLink ]]</a></a-col>
                 <a-col :sx="24" :md="2" style="text-align: right;">
                     <a-tooltip title='{{ i18n "copy" }}'>
